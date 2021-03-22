@@ -1,0 +1,108 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+}
+
+.calculator-box {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    // get 4 columns by 100px
+    grid-template-columns: repeat(4, 100px);
+    // get first column min 120px auto (screen), and 5 more by 100px
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+
+    button {
+        cursor: pointer;
+        font-size: 2rem;
+        border: 1px solid white;
+        outline: none;
+        background-color: rgba(255, 255, 255, .75);
+    }
+
+    button:hover {
+        background-color: rgba(255, 255, 255, .9);
+    }
+
+    // span AC and = columns to TWO
+    .span-two {
+        grid-column: span 2;
+    }
+
+}
+
+.screen-box {
+    // span fron 1 to last (-1) or 1 / 5
+    grid-column: 1 / -1;
+
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0 10px;
+    // break numbers input if the value is too long to another line bottom
+    word-wrap: break-word;
+    word-break: break-all;
+
+    // upper screen value
+    .previous-value {
+        color: rgba(255, 255, 255, .75);
+        font-size: 1.5rem;
+    }
+
+    // current screen value
+    .current-value {
+        color: white;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 415px) {
+    .calculator-box {
+        grid-template-columns: repeat(4, 85px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 90px);
+    }
+
+    .screen-box {
+        .previous-value {
+            font-size: 1.4rem;
+        }
+
+        .current-value {
+            font-size: 2.3rem;
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    .calculator-box {
+        grid-template-columns: repeat(4, 75px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 65px);
+
+        button {
+            font-size: 1.5rem;
+        }
+    }
+
+    .screen-box {
+        .previous-value {
+            font-size: 1.2rem;
+        }
+
+        .current-value {
+            font-size: 2rem;
+        }
+    }
+}

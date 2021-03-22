@@ -1,0 +1,110 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #FA8BFF;
+  background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+}
+
+.calculator-box {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-height: 100vh;
+  -ms-grid-columns: (100px)[4];
+      grid-template-columns: repeat(4, 100px);
+  -ms-grid-rows: minmax(120px, auto) (100px)[5];
+      grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-box button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator-box button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.calculator-box .span-two {
+  grid-column: span 2;
+}
+
+.screen-box {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.screen-box .previous-value {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.screen-box .current-value {
+  color: white;
+  font-size: 2.5rem;
+}
+
+@media (max-width: 415px) {
+  .calculator-box {
+    -ms-grid-columns: (85px)[4];
+        grid-template-columns: repeat(4, 85px);
+    -ms-grid-rows: minmax(120px, auto) (90px)[5];
+        grid-template-rows: minmax(120px, auto) repeat(5, 90px);
+  }
+  .screen-box .previous-value {
+    font-size: 1.4rem;
+  }
+  .screen-box .current-value {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .calculator-box {
+    -ms-grid-columns: (75px)[4];
+        grid-template-columns: repeat(4, 75px);
+    -ms-grid-rows: minmax(120px, auto) (65px)[5];
+        grid-template-rows: minmax(120px, auto) repeat(5, 65px);
+  }
+  .calculator-box button {
+    font-size: 1.5rem;
+  }
+  .screen-box .previous-value {
+    font-size: 1.2rem;
+  }
+  .screen-box .current-value {
+    font-size: 2rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
